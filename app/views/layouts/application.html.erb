@@ -2,13 +2,29 @@
 <html>
 <head>
   <title>Secureyourbike</title>
+  <meta charset=utf-8 />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!-- Mapbox hosted versions and initial style -->
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+  <style>
+    body { margin:0; padding:0; }
+    .map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+
+  <script>
+L.mapbox.accessToken = ENV["mapbox_api_key"];
+L.mapbox.map('map-one', 'paranous.lejfiaeh');
+</script>
 </head>
+
 <body>
 
 <div class="container">
+
 <%= yield %>
 </div>
 
