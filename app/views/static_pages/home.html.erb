@@ -1,15 +1,10 @@
-<h1>Main Page (Map)</h1>
 
 
-<a href="http://localhost:3000/static_pages/landing">Landing Page</a>
-<br>
-<br>
+<div id='basic-Chicago' class='map'> </div>
 
-<p>Main functionality (maps, dials to choose options, etc) go below</p>
+<script>
 
-
-<div id='map-one' class='map'> </div>
-
-
-
-
+L.mapbox.accessToken = '<%= MAPBOX_API_KEY %>';
+L.mapbox.map('basic-Chicago', 'paranous.lejfiaeh', {
+  scrollWheelZoom: false});
+</script>
